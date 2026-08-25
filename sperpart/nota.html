@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nota Pembelian | Raihan Sparepart</title>
+  <style>
+    :root { --ink: #17251f; --muted: #65736d; --paper: #fbfaf7; --orange: #f05b35; --green: #d8e98b; --line: #d9ded4; }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body { margin: 0; color: var(--ink); background: #e8ebe4; font-family: Georgia, serif; }
+    .page { width: min(760px, calc(100% - 32px)); margin: 48px auto; padding: 48px; background: var(--paper); box-shadow: 10px 10px 0 var(--green); }
+    .receipt-header { display: flex; align-items: start; justify-content: space-between; gap: 24px; padding-bottom: 28px; border-bottom: 2px solid var(--ink); }
+    .brand { margin: 0; font-size: 32px; font-weight: 700; }
+    .brand-line { display: flex; align-items: center; gap: 12px; }
+    .brand-mark { display: grid; place-items: center; width: 42px; height: 42px; background: var(--orange); color: white; font: 800 14px Arial, sans-serif; transform: rotate(-7deg); }
+    .brand em { color: var(--orange); font-style: normal; }
+    .brand small { display: block; margin-top: 7px; color: var(--muted); font: 10px Arial, sans-serif; letter-spacing: .5px; }
+    .receipt-label { margin: 0; color: var(--orange); font: 700 12px Arial, sans-serif; letter-spacing: 2px; text-transform: uppercase; }
+    .receipt-date-label { margin: 14px 0 0; color: var(--muted); font: 700 10px Arial, sans-serif; text-transform: uppercase; }
+    .receipt-date { display: none; margin: 8px 0 0; color: var(--muted); font: 12px Arial, sans-serif; }
+    .customer-receipt { margin: 20px 0 0; color: var(--ink); font: 800 15px Arial, sans-serif; }
+    .transaction-code { margin: 8px 0 0; color: var(--ink); font: 800 13px Arial, sans-serif; letter-spacing: .4px; }
+    h1 { margin: 36px 0 24px; font-size: 42px; line-height: .95; text-transform: uppercase; }
+    .receipt-table { width: 100%; border-collapse: collapse; font: 13px Arial, sans-serif; }
+    .receipt-table th { padding: 12px 0; border-bottom: 1px solid var(--ink); color: var(--muted); font-size: 10px; text-align: left; text-transform: uppercase; }
+    .receipt-table th:not(:first-child), .receipt-table td:not(:first-child) { text-align: right; }
+    .receipt-table td { padding: 16px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+    .receipt-table td:first-child { font-weight: 700; }
+    .receipt-table small { display: block; margin-top: 4px; color: var(--muted); font-weight: 400; }
+    .receipt-total { display: flex; justify-content: space-between; gap: 24px; margin-top: 24px; padding-top: 18px; border-top: 2px solid var(--ink); font: 700 18px Arial, sans-serif; }
+    .installment { margin-top: 24px; padding: 18px; background: var(--green); font: 12px Arial, sans-serif; }
+    .installment-title { margin: 0 0 12px; font-weight: 700; }
+    .installment-options { display: flex; gap: 8px; flex-wrap: wrap; }
+    .installment-option { padding: 10px 14px; border: 1px solid var(--ink); background: transparent; color: var(--ink); font: 700 11px Arial, sans-serif; }
+    .installment-option.is-active { background: var(--ink); color: white; }
+    .installment-result { margin: 12px 0 0; font-weight: 700; }
+    .installment-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch; margin-top: 24px; }
+    .installment-layout .installment { margin-top: 0; }
+    .signature-panel { padding: 18px; border: 1px solid var(--line); background: white; }
+    .signature-title { margin: 0 0 12px; font: 700 12px Arial, sans-serif; }
+    .signature-circles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px; }
+    .signature-circle { display: grid; place-items: center; aspect-ratio: 1; max-width: 54px; border: 2px solid var(--ink); border-radius: 50%; color: var(--muted); font: 9px Arial, sans-serif; text-align: center; }
+    @media (max-width: 520px) { .installment-layout { grid-template-columns: 1fr; } .signature-circles { grid-template-columns: repeat(4, 1fr); } }
+    .receipt-note { margin: 34px 0 0; color: var(--muted); font: 11px/1.5 Arial, sans-serif; }
+    .payment-panel { margin-top: 24px; padding: 18px; border: 1px solid var(--line); background: #fff; font: 12px Arial, sans-serif; }
+    .payment-panel h2 { margin: 0 0 8px; font: 700 18px Georgia, serif; text-transform: none; }
+    .payment-status { margin: 0 0 14px; color: var(--muted); line-height: 1.5; }
+    .payment-status.is-paid { color: #287340; font-weight: 700; }
+    .paid-banner { display: none; margin: 28px 0 0; padding: 22px; border: 3px solid #287340; color: #287340; font: 800 30px/1 Arial, sans-serif; letter-spacing: 2px; text-align: center; }
+    .paid-banner.is-visible { display: block; }
+    .page.note-lunas .paid-banner { font-size: 42px; padding: 30px; }
+    .page.note-lunas h1 { font-size: 54px; }
+    .payment-form { display: flex; align-items: end; gap: 10px; flex-wrap: wrap; }
+    .payment-form label { display: grid; gap: 6px; color: var(--muted); font-size: 10px; font-weight: 700; text-transform: uppercase; }
+    .payment-form select { min-height: 40px; padding: 0 10px; border: 1px solid var(--line); background: white; color: var(--ink); font: inherit; }
+    .payment-form button { min-height: 40px; }
+    .actions [disabled] { opacity: .45; cursor: not-allowed; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+    button, .actions a { display: inline-flex; align-items: center; gap: 10px; padding: 13px 16px; border: 0; background: var(--ink); color: white; font: 700 11px Arial, sans-serif; text-decoration: none; cursor: pointer; }
+    .actions .secondary { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+    .actions .cancel-order { background: #a83225; }
+    .empty { padding: 32px 0; color: var(--muted); font: 14px Arial, sans-serif; }
+    @media (max-width: 520px) { .page { margin: 20px auto; padding: 28px 20px; } .receipt-header { display: block; } .receipt-label { margin-top: 18px; } h1 { font-size: 34px; } .receipt-table { font-size: 11px; } .receipt-table th, .receipt-table td { padding: 12px 3px; } .actions { display: grid; } button, .actions a { justify-content: center; } }
+    @media print { body { background: white; } .page { width: 100%; margin: 0; padding: 0; box-shadow: none; } .actions { display: none; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="receipt-header">
+      <p class="brand"><span class="brand-line"><span class="brand-mark">RS</span><span><em>Raihan</em> Sparepart</span></span><small>Sparepart Motor Terpercaya<br><span id="receipt-phone-text"></span></small></p>
+      <div><p class="receipt-label">Nota pembelian</p><p class="receipt-date-label">Tanggal :</p><p class="receipt-date" id="receipt-date"></p></div>
+    </header>
+    <p class="customer-receipt" id="customer-receipt"></p>
+    <p class="transaction-code" id="transaction-code"></p>
+    <div class="paid-banner" id="paid-banner">PEMBAYARAN LUNAS</div>
+    <h1>Detail belanja</h1>
+    <section id="receipt-content"></section>
+    <div class="installment-layout" id="payment-details">
+      <section class="installment" id="installment-box">
+        <p class="installment-title">Pilih angsuran</p>
+        <div class="installment-options"><button class="installment-option is-active" type="button" data-weeks="4">4 minggu</button><button class="installment-option" type="button" data-weeks="8">8 minggu</button></div>
+        <p class="installment-result" id="installment-result"></p>
+      </section>
+      <section class="signature-panel">
+        <p class="signature-title">Tanda tangan pembayaran</p>
+        <div class="signature-circles" id="signature-circles"></div>
+      </section>
+    </div>
+    <section class="payment-panel" aria-live="polite">
+      <h2>Status pembayaran</h2>
+      <p class="payment-status" id="payment-status"></p>
+      <div class="payment-form" id="payment-form">
+        <label for="payment-method">Metode pembayaran<select id="payment-method"><option value="digital">Digital</option><option value="langsung">Langsung</option></select></label>
+        <button id="payment-submit" type="button">Saya sudah membayar</button>
+      </div>
+    </section>
+    <div class="actions">
+      <button id="share-button" type="button">Bagikan nota <span>↗</span></button>
+      <button id="download-button" class="secondary" type="button">Unduh dokumen <span>↓</span></button>
+      <button id="print-button" class="secondary" type="button">Cetak / PDF <span>⎙</span></button>
+      <a id="whatsapp-button" href="#" target="_blank" rel="noreferrer">Kirim ke WhatsApp <span>↗</span></a>
+      <button id="cancel-order" class="cancel-order" type="button">Batalkan pesanan <span>×</span></button>
+      <a class="secondary" href="index.html">Kembali belanja</a>
+    </div>
+  </main>
+  <script>
+    const cart = JSON.parse(localStorage.getItem('motorkita-cart') || '[]');
+    const savedDate = localStorage.getItem('motorkita-receipt-date');
+    const receiptContent = document.querySelector('#receipt-content');
+    const receiptDate = document.querySelector('#receipt-date');
+    const shareButton = document.querySelector('#share-button');
+    const downloadButton = document.querySelector('#download-button');
+    const printButton = document.querySelector('#print-button');
+    const whatsappButton = document.querySelector('#whatsapp-button');
+    const cancelOrder = document.querySelector('#cancel-order');
+    const paymentStatus = document.querySelector('#payment-status');
+    const paymentForm = document.querySelector('#payment-form');
+    const paymentMethod = document.querySelector('#payment-method');
+    const paymentSubmit = document.querySelector('#payment-submit');
+    const installmentResult = document.querySelector('#installment-result');
+    const installmentOptions = document.querySelectorAll('.installment-option');
+    const signatureCircles = document.querySelector('#signature-circles');
+    const formatPrice = (value) => `Rp ${value.toLocaleString('id-ID')}`;
+    const date = savedDate ? new Date(savedDate) : new Date();
+    let transaction = JSON.parse(localStorage.getItem('motorkita-transaction') || 'null');
+    const noteMode = new URLSearchParams(window.location.search).get('mode');
+    const customerReceipt = document.querySelector('#customer-receipt');
+    const paymentDetails = document.querySelector('#payment-details');
+    const transactionCode = document.querySelector('#transaction-code');
+    const receiptPhoneText = document.querySelector('#receipt-phone-text');
+    const paidBanner = document.querySelector('#paid-banner');
+    const isFullPayment = noteMode === 'lunas' || (transaction && transaction.paymentPlan === 'lunas');
+    const normalizePhone = (value) => { const digits = String(value || '').replace(/\D/g, ''); return digits.startsWith('0') ? `62${digits.slice(1)}` : digits; };
+    const shopPhone = normalizePhone(localStorage.getItem('motorkita-shop-phone') || '6281310696424');
+    receiptPhoneText.textContent = `+${shopPhone}`;
+    document.querySelector('.page').classList.toggle('note-lunas', isFullPayment);
+    receiptDate.textContent = new Intl.DateTimeFormat('id-ID', { dateStyle: 'full', timeStyle: 'short' }).format(date);
+    customerReceipt.textContent = transaction && transaction.customerName ? `Pelanggan: ${transaction.customerName}` : '';
+    transactionCode.textContent = transaction && transaction.id ? `Kode transaksi: ${transaction.id}` : '';
+    paymentDetails.hidden = isFullPayment;
+
+    function receiptHtml() {
+      if (!cart.length) return '<p class="empty">Belum ada barang dalam nota. Silakan kembali ke katalog.</p>';
+      const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      const rows = cart.map((item) => `<tr><td>${item.name}<small>${formatPrice(item.price)} / unit</small></td><td>${item.quantity}</td><td>${formatPrice(item.price * item.quantity)}</td></tr>`).join('');
+      return `<table class="receipt-table"><thead><tr><th>Barang</th><th>Jumlah</th><th>Total</th></tr></thead><tbody>${rows}</tbody></table><div class="receipt-total"><span>${totalQuantity} unit barang</span><strong>${formatPrice(totalPrice)}</strong></div><p class="receipt-note">Terima kasih telah berbelanja di MotorKita. Nota dapat dibagikan, diunduh, dicetak, atau dikirim ke WhatsApp setelah pembayaran dikonfirmasi admin.</p>`;
+    }
+
+    function buildShareFile() {
+      const documentHtml = `<!doctype html><html lang="id"><head><meta charset="UTF-8"><title>Nota Raihan Sparepart</title></head><body><h1>RS - Raihan Sparepart</h1><p>${receiptDate.textContent}</p>${receiptHtml()}</body></html>`;
+      return new File([documentHtml], `nota-raihan-sparepart-${date.toISOString().slice(0, 10)}.html`, { type: 'text/html' });
+    }
+
+    receiptContent.innerHTML = receiptHtml();
+    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    let installmentWeeks = 4;
+    function refreshInstallment() {
+      const weekly = total / installmentWeeks;
+      installmentResult.textContent = `${installmentWeeks} minggu: ${formatPrice(weekly)} per minggu`;
+      signatureCircles.innerHTML = Array.from({ length: installmentWeeks }, (_, index) => `<span class="signature-circle">Minggu<br>${index + 1}</span>`).join('');
+    }
+    installmentOptions.forEach((option) => option.addEventListener('click', () => {
+      installmentWeeks = Number(option.dataset.weeks);
+      installmentOptions.forEach((button) => button.classList.toggle('is-active', button === option));
+      refreshInstallment();
+      updateWhatsappLink();
+    }));
+    function updateWhatsappLink() {
+      const messageItems = cart.map((item) => `- ${item.name}: ${item.quantity} unit (${formatPrice(item.price * item.quantity)})`).join('\n');
+      whatsappButton.href = `https://wa.me/${shopPhone}?text=${encodeURIComponent(`Halo Raihan Sparepart, saya ingin menanyakan pesanan:\n${messageItems}\nTotal belanja: ${formatPrice(total)}.\nAngsuran: ${installmentWeeks} minggu x ${formatPrice(total / installmentWeeks)} per minggu.`)}`;
+    }
+    function isPaid() { return transaction && transaction.status === 'paid'; }
+    function refreshPaymentState() {
+      const paid = isPaid();
+      const cancelled = transaction && transaction.status === 'cancelled';
+      paymentStatus.textContent = paid ? 'Pembayaran dikonfirmasi admin. Nota siap digunakan.' : transaction && transaction.status === 'payment-reported' ? 'Pembayaran sudah dilaporkan dan menunggu konfirmasi admin.' : 'Nota terkunci sampai pembayaran dikonfirmasi admin.';
+      if (cancelled) paymentStatus.textContent = 'Pesanan dibatalkan.';
+      paymentStatus.classList.toggle('is-paid', paid);
+      paidBanner.classList.toggle('is-visible', paid && isFullPayment);
+      paymentForm.hidden = paid || (transaction && transaction.status === 'payment-reported');
+      paymentForm.hidden = paymentForm.hidden || cancelled;
+      paymentSubmit.hidden = paid;
+      [shareButton, downloadButton, printButton].forEach((button) => { button.disabled = !paid; });
+      cancelOrder.disabled = !transaction || paid || cancelled;
+      whatsappButton.disabled = !transaction || cancelled;
+      if (cancelled) whatsappButton.removeAttribute('href');
+      else updateWhatsappLink();
+    }
+    refreshInstallment();
+    refreshPaymentState();
+
+    paymentSubmit.addEventListener('click', () => {
+      if (!transaction || transaction.status === 'cancelled') return;
+      transaction.status = 'payment-reported';
+      transaction.paymentMethod = paymentMethod.value;
+      transaction.paymentReportedAt = new Date().toISOString();
+      localStorage.setItem('motorkita-transaction', JSON.stringify(transaction));
+      const transactions = JSON.parse(localStorage.getItem('motorkita-transactions') || '[]');
+      const historyItem = transactions.find((item) => item.id === transaction.id);
+      if (historyItem) { historyItem.status = transaction.status; historyItem.paymentMethod = transaction.paymentMethod; historyItem.paymentReportedAt = transaction.paymentReportedAt; localStorage.setItem('motorkita-transactions', JSON.stringify(transactions)); }
+      refreshPaymentState();
+    });
+    cancelOrder.addEventListener('click', () => {
+      if (!transaction || transaction.status === 'paid' || transaction.status === 'cancelled') return;
+      if (!window.confirm('Batalkan pesanan ini?')) return;
+      transaction.status = 'cancelled';
+      transaction.cancelledAt = new Date().toISOString();
+      localStorage.setItem('motorkita-transaction', JSON.stringify(transaction));
+      const transactions = JSON.parse(localStorage.getItem('motorkita-transactions') || '[]');
+      const historyItem = transactions.find((item) => item.id === transaction.id);
+      if (historyItem) { historyItem.status = 'cancelled'; historyItem.cancelledAt = transaction.cancelledAt; localStorage.setItem('motorkita-transactions', JSON.stringify(transactions)); }
+      refreshPaymentState();
+    });
+    window.addEventListener('storage', (event) => { if (event.key === 'motorkita-transaction') { transaction = event.newValue ? JSON.parse(event.newValue) : null; refreshPaymentState(); } });
+
+    shareButton.addEventListener('click', async () => {
+      if (!isPaid() || !navigator.share || !cart.length) return;
+      const file = buildShareFile();
+      try {
+        const canShareFile = !navigator.canShare || navigator.canShare({ files: [file] });
+        await navigator.share({ title: 'Nota MotorKita', text: 'Nota pembelian MotorKita', files: canShareFile ? [file] : undefined });
+      } catch (error) { if (error.name !== 'AbortError') window.alert('Nota belum dapat dibagikan di browser ini. Gunakan tombol Unduh dokumen.'); }
+    });
+    downloadButton.addEventListener('click', () => { if (!isPaid()) return; const link = document.createElement('a'); link.href = URL.createObjectURL(buildShareFile()); link.download = `nota-motorkita-${date.toISOString().slice(0, 10)}.html`; link.click(); URL.revokeObjectURL(link.href); });
+    printButton.addEventListener('click', () => { if (isPaid()) window.print(); });
+  </script>
+</body>
+</html>

@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pusat sparepart motor berkualitas untuk kebutuhan harian, touring, dan bengkel.">
+  <title>Raihan Sparepart | Suku Cadang Motor Berkualitas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --ink: #17251f;
+  --muted: #65736d;
+  --cream: #f5f3ec;
+  --paper: #fbfaf7;
+  --orange: #f05b35;
+  --orange-dark: #c93e20;
+  --green: #b9d85d;
+  --blue: #94c9da;
+  --line: #d9ded4;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); background: var(--paper); font-family: 'DM Sans', sans-serif; }
+a { color: inherit; text-decoration: none; }
+.container { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
+.site-header { background: var(--paper); border-bottom: 1px solid var(--line); }
+.nav-wrap { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+.brand { display: flex; align-items: center; gap: 11px; font-size: 21px; line-height: .78; letter-spacing: -.8px; }
+.brand strong { font-weight: 700; }.brand small { display: block; margin-top: 8px; color: var(--muted); font-size: 8px; line-height: 1; letter-spacing: .8px; text-transform: uppercase; }
+.brand-mark { width: 35px; height: 35px; display: grid; place-items: center; background: var(--orange); color: white; font-weight: 700; font-size: 12px; transform: rotate(-7deg); }
+.main-nav { display: flex; gap: 30px; color: #53615a; font-size: 13px; }.main-nav a:hover, .text-link:hover { color: var(--orange); }
+.nav-cta { padding: 12px 18px; background: var(--ink); color: white; font-size: 12px; font-weight: 700; }.nav-cta span { margin-left: 10px; color: var(--green); font-size: 16px; }
+.hero { overflow: hidden; background: var(--cream); }.hero-grid { min-height: 605px; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 20px; }
+.eyebrow { display: flex; align-items: center; gap: 9px; margin: 0 0 20px; color: var(--orange-dark); font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }.eyebrow span { width: 22px; height: 2px; background: currentColor; }
+h1, h2, h3, p { margin-top: 0; }h1, h2 { font-family: 'Barlow Condensed', sans-serif; letter-spacing: -.7px; text-transform: uppercase; }h1 { margin-bottom: 22px; font-size: clamp(62px, 7vw, 92px); line-height: .87; font-weight: 800; }h1 em, h2 em { color: var(--orange); font-style: normal; } .hero-text { max-width: 450px; margin-bottom: 30px; color: var(--muted); font-size: 15px; line-height: 1.7; }
+.hero-actions { display: flex; align-items: center; gap: 12px; }.button { display: inline-flex; align-items: center; gap: 18px; padding: 15px 20px; font-size: 12px; font-weight: 700; }.button-primary { background: var(--orange); color: white; }.button-primary:hover { background: var(--orange-dark); }.button-quiet { padding-left: 4px; }.whatsapp-icon { display: grid; place-items: center; width: 25px; height: 25px; border: 1px solid var(--ink); border-radius: 50%; font-size: 12px; }.trust-row { display: flex; gap: 38px; margin-top: 63px; }.trust-row div { display: grid; gap: 4px; }.trust-row strong { font-family: 'Barlow Condensed', sans-serif; font-size: 29px; }.trust-row span { color: var(--muted); font-size: 10px; }
+.hero-visual { position: relative; min-height: 530px; align-self: stretch; }.sun-disc { position: absolute; top: 78px; right: 64px; width: 355px; height: 355px; border-radius: 50%; background: var(--green); }.pipe { position: absolute; width: 110px; height: 450px; border: 20px solid #e4572d; border-top: 0; border-radius: 0 0 65px 65px; box-shadow: inset 9px 0 0 rgba(255,255,255,.19), 8px 10px 0 rgba(32,53,43,.08); transform: rotate(28deg); }.pipe:after { content: ''; position: absolute; bottom: -26px; left: -28px; width: 80px; height: 30px; background: #d54a27; border-radius: 50%; }.pipe-one { top: 97px; right: 161px; }.pipe-two { top: 112px; right: 54px; transform: rotate(42deg); opacity: .92; }.pipe-three { top: 166px; right: 260px; height: 300px; transform: rotate(12deg); opacity: .8; }.product-sticker { position: absolute; right: 28px; bottom: 84px; width: 118px; height: 118px; display: grid; align-content: center; padding-left: 23px; background: var(--ink); color: white; transform: rotate(-10deg); box-shadow: 7px 7px 0 var(--orange); }.product-sticker span { color: var(--green); font-size: 12px; font-weight: 700; }.product-sticker strong { margin-top: 7px; font-family: 'Barlow Condensed'; font-size: 23px; line-height: .85; text-transform: uppercase; }.visual-caption { position: absolute; bottom: 36px; left: 50px; display: flex; align-items: center; gap: 9px; font-size: 12px; }.visual-caption small { display: block; margin-top: 3px; color: var(--muted); font-size: 9px; }.caption-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--orange); }
+.product-section { padding: 100px 0 110px; }.section-heading { display: flex; align-items: end; justify-content: space-between; margin-bottom: 40px; }.section-heading h2, .feature-intro h2, .project-content h2, .contact-grid h2 { margin: 0; font-size: 53px; line-height: .9; }.text-link { margin-bottom: 7px; color: var(--orange-dark); font-size: 12px; font-weight: 700; }.text-link span { margin-left: 13px; font-size: 18px; }.product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }.product-card { min-height: 380px; padding: 22px 24px; display: flex; flex-direction: column; border-top: 4px solid var(--ink); }.card-green { background: var(--green); }.card-orange { background: #f47c53; }.card-blue { background: var(--blue); }.card-top, .card-bottom { display: flex; align-items: center; justify-content: space-between; }.product-tag { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }.card-arrow { font-size: 20px; }.pipe-icon { position: relative; height: 158px; margin: 24px 0 15px; overflow: hidden; }.pipe-icon i { position: absolute; bottom: -70px; width: 70px; height: 205px; border: 13px solid var(--ink); border-bottom: 0; border-radius: 35px 35px 0 0; opacity: .88; }.pipe-icon i:nth-child(1) { left: 48px; transform: rotate(26deg); }.pipe-icon i:nth-child(2) { left: 112px; transform: rotate(39deg); opacity: .6; }.pipe-icon i:nth-child(3) { left: 172px; transform: rotate(51deg); opacity: .35; }.product-card h3 { margin-bottom: 7px; font-family: 'Barlow Condensed'; font-size: 29px; text-transform: uppercase; }.product-card p { min-height: 42px; margin-bottom: 20px; color: rgba(23,37,31,.72); font-size: 12px; line-height: 1.5; }.card-bottom { margin-top: auto; padding-top: 17px; border-top: 1px solid rgba(23,37,31,.25); }.card-bottom strong { font-family: 'Barlow Condensed'; font-size: 21px; }.card-bottom strong span { margin-left: 3px; font-family: 'DM Sans'; font-size: 9px; font-weight: 400; }.card-bottom a { width: 31px; height: 31px; display: grid; place-items: center; border: 1px solid var(--ink); border-radius: 50%; font-size: 21px; }.card-bottom a:hover { background: var(--ink); color: white; }
+  .admin-public-comment { display: none; margin: 0 0 24px; padding: 14px 18px; border-left: 4px solid var(--orange); background: #fff3d2; color: var(--ink); font-size: 13px; line-height: 1.5; }.admin-public-comment.is-visible { display: block; }
+  .buyer-comment-box { margin: 0 0 24px; padding: 18px; border: 1px solid var(--line); background: #fff3d2; }.buyer-comment-box label { display: grid; gap: 7px; color: var(--ink); font-size: 12px; font-weight: 700; }.buyer-comment-box textarea { min-height: 68px; resize: vertical; padding: 10px; border: 1px solid var(--line); background: white; color: var(--ink); font: inherit; line-height: 1.5; }
+.feature-section { padding: 100px 0; background: #e8ebe4; }.feature-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 100px; }.feature-intro > p:not(.eyebrow) { max-width: 360px; margin: 25px 0 30px; color: var(--muted); font-size: 14px; line-height: 1.7; }.button-dark { background: var(--ink); color: white; }.feature-list { border-top: 1px solid #bdc6bb; }.feature-item { display: grid; grid-template-columns: 55px 1fr 35px; align-items: center; gap: 15px; padding: 25px 0; border-bottom: 1px solid #bdc6bb; }.feature-number { color: var(--orange-dark); font-family: 'Barlow Condensed'; font-size: 20px; }.feature-item h3 { margin-bottom: 6px; font-family: 'Barlow Condensed'; font-size: 24px; text-transform: uppercase; }.feature-item p { margin: 0; color: var(--muted); font-size: 12px; }.feature-icon { color: var(--orange-dark); font-weight: 700; text-align: right; }
+.project-strip { padding: 74px 0; background: var(--orange); color: white; }.project-content { display: flex; justify-content: space-between; align-items: center; }.eyebrow.light { color: var(--green); }.project-content h2 { font-size: 52px; }.project-content h2 em { color: var(--ink); }.button-light { background: white; color: var(--ink); }.contact-section { padding: 93px 0; }.contact-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: end; }.contact-details { justify-self: end; min-width: 320px; }.contact-details > p { color: var(--muted); font-size: 11px; }.contact-line { display: flex; justify-content: space-between; gap: 45px; padding: 18px 0; border-bottom: 1px solid var(--line); font-size: 12px; }.contact-line span { color: var(--muted); }.contact-line strong { color: var(--orange-dark); }.site-footer { padding: 22px 0; background: var(--ink); color: #aebbb3; font-size: 10px; }.footer-wrap { display: flex; justify-content: space-between; }
+@media (max-width: 800px) { .container { width: min(100% - 32px, 580px); }.nav-wrap { min-height: 70px; }.main-nav { display: none; }.nav-cta { padding: 10px 12px; font-size: 10px; }.hero-grid { display: block; padding-top: 74px; }.hero-copy { position: relative; z-index: 1; }.hero-visual { min-height: 350px; margin-top: -5px; }.sun-disc { top: 30px; right: 24px; width: 250px; height: 250px; }.pipe { height: 285px; width: 85px; border-width: 15px; }.pipe-one { top: 47px; right: 110px; }.pipe-two { top: 54px; right: 32px; }.pipe-three { top: 90px; right: 175px; height: 220px; }.product-sticker { right: 7px; bottom: 34px; transform: scale(.8) rotate(-10deg); }.visual-caption { bottom: 6px; left: 10px; }.trust-row { gap: 20px; margin-top: 45px; }.trust-row strong { font-size: 24px; }.section-heading, .project-content { display: block; }.section-heading h2, .feature-intro h2, .contact-grid h2 { font-size: 46px; }.text-link { display: inline-block; margin-top: 25px; }.product-section, .feature-section { padding: 70px 0; }.product-grid { grid-template-columns: 1fr; }.product-card { min-height: 360px; }.feature-grid, .contact-grid { grid-template-columns: 1fr; gap: 45px; }.project-content h2 { font-size: 44px; margin-bottom: 30px; }.contact-details { justify-self: stretch; min-width: 0; }.footer-wrap { gap: 10px; flex-direction: column; } }
+@media (max-width: 420px) { h1 { font-size: 57px; }.hero-actions { align-items: flex-start; flex-direction: column; }.hero-visual { margin-top: 10px; }.contact-line { gap: 12px; font-size: 11px; } }
+.checkout-trigger { width: 31px; height: 31px; display: grid; place-items: center; padding: 0; border: 1px solid var(--ink); border-radius: 50%; background: transparent; color: var(--ink); font: inherit; font-size: 20px; cursor: pointer; transition: background .2s, color .2s; }.checkout-trigger:hover, .checkout-trigger:focus-visible { background: var(--ink); color: white; outline: none; }
+.checkout-modal { position: fixed; inset: 0; z-index: 10; display: grid; place-items: center; padding: 24px; background: rgba(23,37,31,.58); opacity: 0; pointer-events: none; transition: opacity .2s ease; }.checkout-modal.is-open { opacity: 1; pointer-events: auto; }.checkout-dialog { position: relative; width: min(100%, 520px); padding: 34px; background: var(--paper); box-shadow: 10px 10px 0 var(--orange); transform: translateY(12px); transition: transform .2s ease; }.checkout-modal.is-open .checkout-dialog { transform: translateY(0); }.checkout-dialog .eyebrow { margin-bottom: 14px; }.checkout-dialog h2 { margin: 0 0 22px; font-size: 44px; line-height: .9; }.checkout-close { position: absolute; top: 12px; right: 14px; width: 32px; height: 32px; padding: 0; border: 0; background: transparent; color: var(--ink); font-size: 28px; line-height: 1; cursor: pointer; }.quantity-control { display: flex; align-items: center; width: 145px; border: 1px solid var(--line); }.quantity-control button { width: 40px; height: 40px; border: 0; background: transparent; color: var(--ink); font-size: 20px; cursor: pointer; }.quantity-control input { width: 65px; height: 40px; padding: 0; border: 0; border-right: 1px solid var(--line); border-left: 1px solid var(--line); background: transparent; color: var(--ink); font: inherit; text-align: center; }.checkout-list { display: grid; gap: 12px; max-height: 250px; overflow-y: auto; }.checkout-item { display: grid; grid-template-columns: 1fr auto 24px; align-items: center; gap: 10px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }.checkout-item strong, .checkout-item small { display: block; }.checkout-item strong { font-size: 12px; }.checkout-item small { margin-top: 4px; color: var(--muted); font-size: 10px; }.checkout-item .quantity-control { width: 118px; }.checkout-item .quantity-control button { width: 31px; height: 34px; }.checkout-item .quantity-control input { width: 54px; height: 34px; font-size: 12px; }.remove-item { width: 24px; height: 24px; padding: 0; border: 0; background: transparent; color: var(--orange-dark); font-size: 22px; line-height: 1; cursor: pointer; }.checkout-empty { margin: 0; color: var(--muted); font-size: 12px; }.checkout-total { display: flex; justify-content: space-between; align-items: center; margin: 28px 0 22px; padding-top: 17px; border-top: 1px solid var(--line); }.checkout-total span { color: var(--muted); font-size: 12px; }.checkout-total strong { font-family: 'Barlow Condensed'; font-size: 26px; }.checkout-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; }.checkout-continue { padding-left: 0; padding-right: 0; }.checkout-whatsapp { flex: 1; justify-content: space-between; }
+@media (max-width: 420px) { .checkout-dialog { padding: 28px 22px; }.checkout-dialog h2 { font-size: 39px; } }
+.admin-toggle { padding: 8px 11px; border: 1px solid var(--line); background: transparent; color: var(--muted); font: inherit; font-size: 10px; font-weight: 700; cursor: pointer; }.admin-toggle:hover, .admin-toggle:focus-visible { border-color: var(--orange); color: var(--orange-dark); outline: none; }
+  .checkout-trigger:disabled { opacity: .45; cursor: not-allowed; }.stock-status { display: block; margin-top: 3px; color: rgba(23,37,31,.65); font-size: 9px; }.stock-status.preorder-status { color: #a83225; font-weight: 800; }
+.admin-modal { position: fixed; inset: 0; z-index: 11; display: grid; place-items: center; padding: 24px; background: rgba(23,37,31,.58); opacity: 0; pointer-events: none; transition: opacity .2s ease; }.admin-modal.is-open { opacity: 1; pointer-events: auto; }.admin-dialog { position: relative; width: min(100%, 620px); padding: 34px; background: var(--paper); box-shadow: 10px 10px 0 var(--green); transform: translateY(12px); transition: transform .2s ease; }.admin-modal.is-open .admin-dialog { transform: translateY(0); }.admin-dialog h2 { margin: 0 0 8px; font-size: 44px; line-height: .9; }.admin-note { margin-bottom: 24px; color: var(--muted); font-size: 12px; line-height: 1.5; }.admin-close { position: absolute; top: 12px; right: 14px; width: 32px; height: 32px; padding: 0; border: 0; background: transparent; color: var(--ink); font-size: 28px; cursor: pointer; }.stock-list { border-top: 1px solid var(--line); }.stock-list label { display: grid; grid-template-columns: 1fr 90px 24px 72px 35px; align-items: center; gap: 10px; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 12px; font-weight: 700; }.stock-list input { width: 100%; padding: 8px; border: 1px solid var(--line); background: white; color: var(--ink); font: inherit; text-align: center; }.stock-list span { color: var(--muted); font-size: 10px; font-weight: 400; }.admin-save { margin-top: 24px; border: 0; cursor: pointer; }.admin-save span { color: var(--green); }
+@media (max-width: 800px) { .admin-toggle { margin-left: auto; }.nav-cta { white-space: nowrap; } }
+@media (max-width: 420px) { .admin-dialog { padding: 28px 22px; }.admin-dialog h2 { font-size: 39px; }.stock-list label { grid-template-columns: 1fr 62px 20px 54px 28px; gap: 5px; }.stock-list input { width: 100%; } }
+.access-modal { position: fixed; inset: 0; z-index: 12; display: grid; place-items: center; padding: 24px; background: rgba(23,37,31,.58); opacity: 0; pointer-events: none; transition: opacity .2s ease; }.access-modal.is-open { opacity: 1; pointer-events: auto; }.access-dialog { position: relative; width: min(100%, 380px); padding: 34px; background: var(--paper); box-shadow: 10px 10px 0 var(--orange); transform: translateY(12px); transition: transform .2s ease; }.access-modal.is-open .access-dialog { transform: translateY(0); }.access-dialog h2 { margin: 0 0 24px; font-size: 44px; line-height: .9; }.access-close { position: absolute; top: 12px; right: 14px; width: 32px; height: 32px; padding: 0; border: 0; background: transparent; color: var(--ink); font-size: 28px; cursor: pointer; }.access-label { display: block; margin-bottom: 8px; color: var(--muted); font-size: 11px; }.access-input { width: 100%; padding: 13px; border: 1px solid var(--line); background: white; color: var(--ink); font: inherit; }.access-input:focus { border-color: var(--orange); outline: 2px solid rgba(240,91,53,.2); }.access-error { display: none; margin: 8px 0 0; color: var(--orange-dark); font-size: 11px; }.access-error.is-visible { display: block; }.access-submit { margin-top: 22px; border: 0; cursor: pointer; }
+@media (max-width: 420px) { .access-dialog { padding: 28px 22px; }.access-dialog h2 { font-size: 39px; } }
+
+    [hidden] { display: none !important; }
+    .group-shortcuts { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 26px; }
+    .group-shortcut { padding: 10px 14px; border: 1px solid var(--line); background: transparent; color: var(--muted); font: inherit; font-size: 11px; font-weight: 700; cursor: pointer; }
+    .group-shortcut span { margin-left: 5px; color: var(--orange-dark); font-size: 10px; }
+    .group-shortcut:hover, .group-shortcut.is-active { border-color: var(--ink); background: var(--ink); color: white; }
+    .group-shortcut:hover span, .group-shortcut.is-active span { color: var(--green); }
+    .product-card.group-mesin { background: #d8e98b; }
+    .product-card.group-pengereman { background: #f47c53; }
+    .product-card.group-penggerak { background: #94c9da; }
+    .product-card.group-kelistrikan { background: #f4c95d; }
+    .product-card { background: var(--category-color, var(--green)); }
+    .checkout-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); }
+    .checkout-summary div { display: grid; gap: 4px; }
+    .checkout-summary span { color: var(--muted); font-size: 10px; }
+    .checkout-summary strong { font-family: 'Barlow Condensed'; font-size: 22px; }
+    .checkout-item-total { color: var(--orange-dark) !important; font-weight: 700; }
+    .receipt-date { margin: -12px 0 20px; color: var(--muted); font-size: 10px; }
+    @media print { body * { visibility: hidden !important; } .checkout-modal.is-open, .checkout-modal.is-open * { visibility: visible !important; } .checkout-modal.is-open { position: absolute; inset: 0; display: block; padding: 0; background: white; opacity: 1; } .checkout-dialog { width: 100%; max-width: none; min-height: 100vh; padding: 20px; box-shadow: none; transform: none; } .checkout-close, .checkout-actions { display: none !important; } .checkout-list { max-height: none; overflow: visible; } }
+    @media (max-width: 420px) { .group-shortcuts { gap: 6px; } .group-shortcut { padding: 9px 10px; } }
+    .admin-transaction small:first-of-type { color: var(--ink); font-weight: 700; }
+    .customer-name-field input { font-weight: 700; }.customer-comment-field textarea { min-height: 70px; resize: vertical; }
+    .transaction-search { width: 100%; margin-bottom: 12px; padding: 10px; border: 1px solid var(--line); background: white; color: var(--ink); font: inherit; }
+    .transaction-search:focus { border-color: var(--orange); outline: 2px solid rgba(240,91,53,.2); }
+    .product-search { width: min(100%, 360px); margin: 0 0 20px; padding: 13px 15px; border: 1px solid var(--line); background: white; color: var(--ink); font: inherit; }
+    .product-search:focus { border-color: var(--orange); outline: 2px solid rgba(240,91,53,.2); }
+    .search-empty { display: none; margin: 20px 0; color: var(--muted); font-size: 13px; }
+    .search-empty.is-visible { display: block; }
+    .customer-history { margin-top: 45px; padding: 24px; background: #e8ebe4; }.customer-history h3 { margin: 0 0 8px; font-family: 'Barlow Condensed'; font-size: 26px; text-transform: uppercase; }.customer-history p { color: var(--muted); font-size: 12px; }.customer-history-form { display: flex; gap: 10px; max-width: 560px; }.customer-history-form input { flex: 1; min-width: 0; padding: 12px; border: 1px solid var(--line); background: white; font: inherit; }.customer-history-form button { padding: 12px 16px; border: 0; background: var(--ink); color: white; font: inherit; font-weight: 700; cursor: pointer; }.customer-history-result { margin-top: 18px; }.customer-history-result strong { display: block; color: var(--ink); font-size: 14px; }.customer-history-result small { display: block; margin-top: 6px; color: var(--muted); font-size: 11px; }
+    .admin-history-link { display: block; margin: 0 0 20px; color: var(--orange-dark); font-size: 16px; font-weight: 800; text-decoration: none; }
+    .history-shortcut { padding: 10px 12px; border: 1px solid var(--ink); color: var(--ink); font-size: 11px; font-weight: 700; white-space: nowrap; }.history-shortcut:hover { background: var(--ink); color: white; }
+    .customer-history-result button { margin-top: 14px; padding: 11px 15px; border: 0; background: var(--orange); color: white; font: inherit; font-weight: 700; cursor: pointer; }
+    .admin-modal .stock-list, .admin-modal .admin-save { display: none; }
+    .payment-plan-field { display: grid; gap: 7px; margin-bottom: 18px; color: var(--muted); font-size: 11px; font-weight: 700; }
+    .payment-plan-field select { width: 100%; padding: 12px; border: 1px solid var(--line); background: white; color: var(--ink); font: inherit; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#beranda" aria-label="Raihan Sparepart Beranda">
+        <span class="brand-mark">RS</span>
+        <span><strong>Raihan</strong> Sparepart<small>Sparepart Motor Terpercaya<br>+62 813 1069 6424</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Navigasi utama">
+        <a href="#produk">Produk</a>
+        <a href="#keunggulan">Keunggulan</a>
+        <a href="#proyek">Untuk Proyek</a>
+        <a href="#kontak">Kontak</a>
+      </nav>
+      <button class="admin-toggle" id="admin-toggle" type="button">Admin</button>
+      <a class="history-shortcut" href="#riwayat">Cari histori</a>
+      <a class="nav-cta" data-contact-link="shop" href="#kontak">Tanya Harga <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="beranda">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>Rawat performa.<br><em>Gas tanpa ragu.</em></h1>
+          <p class="hero-text">Sparepart motor berkualitas untuk pemakaian harian, touring, hingga kebutuhan bengkel. Stok siap kirim, konsultasi gratis.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#produk">Lihat Produk <span aria-hidden="true">↓</span></a>
+            <a class="button button-quiet" data-contact-link="shop" href="#kontak"><span class="whatsapp-icon">◉</span> Chat WhatsApp</a>
+          </div>
+          <div class="trust-row">
+            <div><strong>12+</strong><span>Tahun pengalaman</span></div>
+            <div><strong>100%</strong><span>Produk original</span></div>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Ilustrasi sparepart motor">
+          <div class="sun-disc"></div>
+          <div class="pipe pipe-one"></div>
+          <div class="pipe pipe-two"></div>
+          <div class="pipe pipe-three"></div>
+          <div class="product-sticker"><span>MotorKita</span><strong>Rider<br>Quality</strong></div>
+          <div class="visual-caption"><span class="caption-dot"></span><span><strong>Built to ride</strong><small>Komponen teruji</small></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-section" id="produk">
+      <div class="container">
+        <p class="admin-public-comment" id="admin-public-comment"></p>
+        <div class="buyer-comment-box"><label for="page-customer-comment">Komentar pembeli untuk admin<textarea id="page-customer-comment" placeholder="Tulis pesan atau permintaan untuk admin sebelum memesan..."></textarea></label></div>
+        <div class="section-heading">
+          <div><p class="eyebrow"><span></span> Pilihan terlaris</p><h2>Sparepart untuk<br><em>setiap perjalanan.</em></h2></div>
+          <a class="text-link" href="#kontak">Minta katalog lengkap <span>→</span></a>
+        </div>
+        <div class="group-shortcuts" id="group-shortcuts" aria-label="Pintasan kategori produk"></div>
+        <input class="product-search" id="product-search" type="search" placeholder="Cari produk..." aria-label="Cari produk">
+        <p class="search-empty" id="search-empty">Produk tidak ditemukan.</p>
+        <div class="product-grid" id="product-grid"></div>
+      </div>
+    </section>
+    <section class="customer-history" id="riwayat"><div class="container"><h3>Riwayat belanja pelanggan</h3><p>Masukkan kode transaksi dari nota untuk melihat detail pembelian.</p><form class="customer-history-form" id="customer-history-form"><input id="customer-history-code" type="search" placeholder="Contoh: MK-123456789" aria-label="Kode transaksi"><button type="submit">Cari histori</button></form><div class="customer-history-result" id="customer-history-result" aria-live="polite"></div></div></section>
+
+    <section class="feature-section" id="keunggulan">
+      <div class="container feature-grid">
+        <div class="feature-intro"><p class="eyebrow"><span></span> Kenapa MotorKita?</p><h2>Lebih dari sekadar<br><em>jual sparepart.</em></h2><p>Kami membantu Anda memilih komponen yang tepat, memastikan kecocokan dengan motor, sampai pesanan tiba dengan aman.</p><a class="button button-dark" href="#kontak">Konsultasi gratis <span>→</span></a></div>
+        <div class="feature-list"><div class="feature-item"><span class="feature-number">01</span><div><h3>Produk berkualitas &amp; bergaransi</h3><p>Sparepart pilihan dengan kualitas terjamin untuk pemakaian jangka panjang.</p></div><span class="feature-icon">✓</span></div><div class="feature-item"><span class="feature-number">02</span><div><h3>Harga transparan</h3><p>Dapatkan harga terbaik untuk pembelian satuan maupun kebutuhan bengkel.</p></div><span class="feature-icon">Rp</span></div><div class="feature-item"><span class="feature-number">03</span><div><h3>Pengiriman ke seluruh kota</h3><p>Pesanan dikemas aman dan dikirim cepat sampai ke alamat Anda.</p></div><span class="feature-icon">↗</span></div></div>
+      </div>
+    </section>
+
+    <section class="project-strip" id="proyek"><div class="container project-content"><div><p class="eyebrow light"><span></span> Butuh dalam jumlah banyak?</p><h2>Proyek besar dimulai<br>dengan <em>perhitungan tepat.</em></h2></div><a class="button button-light" data-contact-link="project" href="#kontak">Bicarakan proyek <span>↗</span></a></div></section>
+
+    <section class="contact-section" id="kontak"><div class="container contact-grid"><div><p class="eyebrow"><span></span> Hubungi kami</p><h2>Siap bantu motor<br><em>Anda melaju.</em></h2></div><div class="contact-details"><p>Senin–Sabtu, 08.00–17.00 WIB</p><a data-contact-link="shop" href="#kontak" target="_blank" rel="noreferrer" class="contact-line"><span>WhatsApp</span><strong data-contact-text="shop"></strong></a><a href="mailto:raihanth123456@gmail.com" class="contact-line"><span>Email</span><strong>raihanth123456@gmail.com ↗</strong></a></div></div></section>
+  </main>
+
+  <div class="checkout-modal" id="checkout-modal" aria-hidden="true">
+    <div class="checkout-dialog" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+      <button class="checkout-close" type="button" aria-label="Tutup checkout">×</button>
+      <p class="eyebrow"><span></span> Nota pembelian</p>
+      <h2 id="checkout-title">Pesan produk</h2>
+      <label class="customer-name-field" for="customer-name">Nama pelanggan<input id="customer-name" type="text" autocomplete="name" placeholder="Masukkan nama Anda"></label>
+      <label class="customer-comment-field" for="customer-comment">Komentar untuk admin<textarea id="customer-comment" placeholder="Tulis komentar untuk admin (opsional)"></textarea></label>
+      <label class="payment-plan-field" for="payment-plan">Pilihan pembayaran<select id="payment-plan"><option value="lunas">Bayar lunas</option><option value="angsuran">Gunakan angsuran</option></select></label>
+      <div class="checkout-list" id="checkout-list"></div>
+      <p class="checkout-empty" id="checkout-empty">Belum ada produk dalam list pembelian.</p>
+      <div class="checkout-summary"><div><span>Total barang</span><strong id="checkout-count">0 unit</strong></div><div><span>Total harga</span><strong id="checkout-total">Rp 0</strong></div></div>
+      <div class="checkout-actions"><button class="button button-quiet checkout-continue" id="checkout-continue" type="button">Tambah produk <span>＋</span></button><button class="button button-primary checkout-order" id="checkout-order" type="button">Pesan <span>→</span></button></div>
+    </div>
+  </div>
+  <div class="admin-modal" id="admin-modal" aria-hidden="true">
+    <div class="admin-dialog" role="dialog" aria-modal="true" aria-labelledby="admin-title">
+      <button class="admin-close" type="button" aria-label="Tutup mode admin">×</button>
+      <p class="eyebrow"><span></span> Mode admin</p>
+      <h2 id="admin-title">Atur stok produk</h2>
+      <p class="admin-note">Pengaturan harga dan unit dipindahkan ke halaman admin lengkap.</p>
+      <div class="admin-transactions"><h3>Histori pembelian <span id="transaction-count">0</span></h3><div id="transaction-list"></div></div>
+      <a class="admin-history-link" href="admin.html">Buka halaman admin lengkap ↗</a>
+      <div class="stock-list" id="stock-list"></div>
+      <button class="button button-dark admin-save" id="admin-save" type="button">Simpan perubahan <span>✓</span></button>
+    </div>
+  </div>
+  <div class="access-modal" id="access-modal" aria-hidden="true">
+    <div class="access-dialog" role="dialog" aria-modal="true" aria-labelledby="access-title">
+      <button class="access-close" type="button" aria-label="Tutup akses admin">×</button>
+      <p class="eyebrow"><span></span> Akses terbatas</p>
+      <h2 id="access-title">Masuk admin</h2>
+      <label class="access-label" for="access-code">Kode akses</label>
+      <input class="access-input" id="access-code" type="password" autocomplete="off" placeholder="Masukkan kode akses">
+      <p class="access-error" id="access-error" role="alert">Kode akses salah.</p>
+      <button class="button button-dark access-submit" id="access-submit" type="button">Masuk <span>→</span></button>
+    </div>
+  </div>
+  <footer class="site-footer"><div class="container footer-wrap"><span>© 2024 MotorKita. Sparepart Motor Terpercaya.</span><span>Indramayu</span></div></footer>
+  <script>
+    const checkoutModal = document.querySelector('#checkout-modal');
+    const checkoutList = document.querySelector('#checkout-list');
+    const checkoutEmpty = document.querySelector('#checkout-empty');
+    const checkoutCount = document.querySelector('#checkout-count');
+    const checkoutTotal = document.querySelector('#checkout-total');
+    const checkoutContinue = document.querySelector('#checkout-continue');
+    const checkoutOrder = document.querySelector('#checkout-order');
+    const customerName = document.querySelector('#customer-name');
+    const customerComment = document.querySelector('#customer-comment');
+    const productSearch = document.querySelector('#product-search');
+    const adminPublicComment = document.querySelector('#admin-public-comment');
+    const pageCustomerComment = document.querySelector('#page-customer-comment');
+    const searchEmpty = document.querySelector('#search-empty');
+    const customerHistoryForm = document.querySelector('#customer-history-form');
+    const customerHistoryCode = document.querySelector('#customer-history-code');
+    const customerHistoryResult = document.querySelector('#customer-history-result');
+    const paymentPlan = document.querySelector('#payment-plan');
+    const adminModal = document.querySelector('#admin-modal');
+    const accessModal = document.querySelector('#access-modal');
+    const accessCodeInput = document.querySelector('#access-code');
+    const accessError = document.querySelector('#access-error');
+    const stockList = document.querySelector('#stock-list');
+    const transactionList = document.querySelector('#transaction-list');
+    const transactionCount = document.querySelector('#transaction-count');
+    const transactionSearch = document.createElement('input');
+    transactionSearch.className = 'transaction-search';
+    transactionSearch.type = 'search';
+    transactionSearch.placeholder = 'Cari kode atau nama pelanggan...';
+    transactionSearch.setAttribute('aria-label', 'Cari histori transaksi');
+    transactionList.parentElement.insertBefore(transactionSearch, transactionList);
+    const adminAccessCode = '210607';
+    const adminSessionKey = 'motorkita-admin-unlocked';
+    const defaultCatalogData = `AS SHOCK DEPAN|BEAT F1|KZL|SET|112000
+AS SHOCK DEPAN|SUPRA X|KEV|SET|112000
+AS SHOCK DEPAN|MIO SPORTY|5TL|SET|112000
+AS SHOCK DEPAN|JUPITER Z|5TP|SET|112000
+AS SHOCK DEPAN|MIO J|54P|SET|112000
+ARENG / COOL STATER|GRAND|GN5|SET|8000
+ARENG / COOL STATER|SUPRA X125|KPH|SET|8000
+ARENG / COOL STATER|BEAT / VARIO|KVY|SET|8000
+ARENG / COOL STATER|JUPITER|5TP|SET|8000
+ARENG / COOL STATER|SATRIA FU|SGP|SET|8000
+BLOK ASSY|SUPRA FIT|KFM|SET|285000
+BLOK ASSY|GRAND|GN5|SET|230000
+BLOK ASSY|SUPRA X125|KPH|SET|315000
+BLOK ASSY|BEAT|KVY|SET|272000
+BLOK ASSY|BEAT F1|KZL|SET|277000
+BLOK ASSY|BEAT POP|K44|SET|280000
+BLOK ASSY|GENIO|KOJ|SET|280000
+BLOK ASSY|BLADE|KWB|SET|285000
+BLOK ASSY|VARIO|KVB|SET|290000
+BLOK ASSY|MIO J|54P|SET|285000
+BLOK ASSY|MIO M3|2PH|SET|285000
+BLOK ASSY|JUPITER MX|5OC|SET|290000
+BLOK ASSY|MIO|5TL|SET|280000
+BLOK ASSY|VEGA ZR|5D9|SET|315000
+BLOK ASSY|JUPITER Z|5TP|SET|285000
+BUSI|MIO|U22|PCS|8500
+BUSI|BEAT / VARIO|U20|PCS|8500
+BUSI|M,PRO, GL, TIGER|U9|PCS|9000
+BOHLAM|DEPAN||PCS|5500
+BOHLAM|BELAKANG||PCS|5000
+COIL|BEAT|KVY|PCS|35000
+COIL|BEAT F1|KZL|PCS|35000
+COIL|JUPITER|5TP|PCS|35000
+CDI|GRAND|GN5|PCS|35000
+CDI|KHARISMA|KPH|PCS|95000
+CDI|REVO ABSLUTE|KWB|PCS|95000
+CDI|SHOGUN 110|SGP|PCS|95000
+CDI|MIO|5TL|PCS|95000
+CARBURATOR|MIO|5TL|PCS|210000
+CARBURATOR|SUPRA|GN5|PCS|125000
+CARBURATOR|BEAT|KVY|PCS|305000
+DINAMO STATER|MIO J|54P|PCS|160000
+DINAMO STATER|VEGA ZR|5D9|PCS|160000
+DINAMO STATER|MIO|5TL|PCS|185000
+DINAMO STATER|VARIO|KVB|PCS|160000
+DINAMO STATER|SUPRA X|GN5|PCS|160000
+DINAMO STATER|JUPITER Z|5TP|PCS|160000
+DISPAD|VARIO 150|K59|SET|16000
+DISPAD|BLADE|KWB|SET|15000
+DISPAD|MEGA PRO BELAKANG|KSP|SET|16000
+DISPAD|SUPRA|KR3|SET|15000
+DISPAD|SUPRA X125|KPP|SET|16000
+DISPAD|MEGAPRO DEPAN|KPP|SET|16000
+DISPAD|BEAT / VARIO|KVB|SET|15000
+DISPAD|PCX DEPAN|KRE|SET|17000
+DISPAD|PCX BELAKANG|K97|SET|16000
+DISPAD|JUPITER MX / VIXION DEPAN|3CI|SET|16000
+DISPAD|JUPITER MX BLKG|5OC|SET|15000
+DISPAD|F1ZR|4US|SET|16000
+DISPAD|MIO M3|2PH|SET|15000
+FITTING LAMPU|HONDA||-|8500
+FITTING LAMPU|YAMAHA||-|8500
+FILTER UDARA|BEAT F1|K16|PCS|23000
+FILTER UDARA|VARIO TECNO 125|KZR|PCS|25000
+FILTER UDARA|GENIO|KOJ|PCS|23000
+FILTER UDARA|VARIO|KVB|PCS|20000
+FILTER UDARA|BEAT|KVY|PCS|22000
+FILTER UDARA|MIO SOUL|14D|PCS|23000
+FILTER UDARA|MIO|5TL|PCS|22000
+FILTER UDARA|MIO J|54P|PCS|22000
+FILTER UDARA|MIO M3|2PH|PCS|22000
+FILTER UDARA|AEROX|B65|PCS|25000
+FILTER UDARA|N MAX|2DP|PCS|25000
+FILTER OLI|JUPITER MX / VIXION|1S7|-|8500
+FILTER OLI|SMASH / SATRIA FU|SGP|-|8500
+FILTER OLI|FLASHER SEIN|***|PCS|9000
+GEAR BOX|BEAT / VARIO|KVB|PCS|20000
+GEAR BOX|BLADE / REVO|KWB|PCS|20000
+GEAR BOX|MIO / JUPITER|5TL|PCS|20000
+GEAR SET|SUPRA X125|KPH|SET|130000
+GEAR SET|SUPRA X|KEV|SET|135000
+GEAR SET|SUPRA FIT|KTL|SET|130000
+GEAR SET|SUPRA X125 F1|KYZ|SET|135000
+GEAR SET|VEGA ZR|5D9|SET|135000
+GEAR SET|VIXION NEW|1PA|SET|145000
+GEAR SET|JUPITER Z|5TP|SET|125000
+GEAR SET|SMASH NEW|SGP|SET|125000
+KIPAS RUMAH ROLLER|BEAT POP|K44|PCS|35000
+KIPAS RUMAH ROLLER|BEAT F1|KZL|PCS|35000
+KIPAS RUMAH ROLLER|GENIO|KOJ|PCS|35000
+KIPAS RUMAH ROLLER|VARIO 125|KZR|PCS|35000
+KIPAS RUMAH ROLLER|MIO|5TL|PCS|35000
+KIPAS RUMAH ROLLER|MIO J|54P|PCS|35000
+KIPAS RUMAH ROLLER|MIO M3|2PH|PCS|35000
+KIPAS RUMAH ROLLER|N MAX|2DP|PCS|35000
+KOMSTIR|SUPRA|GN5|SET|45000
+KOMSTIR|M. PRO / GL PRO|KTR|SET|50000
+KOMSTIR|TIGER|0,41|SET|50000
+KOMSTIR|MIO|35D|SET|50000
+KOMSTIR|VIXION|3CI|SET|60000
+KOMSTIR|XEON / N MAX|44D|SET|60000
+KUNCI KONTAK|BEAT|KVY|SET|130000
+KUNCI KONTAK|VARIO|KVB|SET|130000
+KUNCI KONTAK|VARIO 125|KZR|SET|155000
+KUNCI KONTAK|VARIO 150|K59|SET|195000
+KUNCI KONTAK|SUPRA X125|KTM|SET|125000
+KUNCI KONTAK|KHARISMA|KPH|SET|75000
+KUNCI KONTAK|SUPRAX|GN5|SET|75000
+KUNCI KONTAK|MIO|5TL|SET|90000
+KUNCI KONTAK|MIO J|54P|SET|185000
+KUNCI KONTAK|MIO M3|2PH|SET|180000
+KUNCI KONTAK|MIO SOUL KARBURATOR|14D|SET|140000
+KUNCI KONTAK|MIO SOUL GT F1|2SX|SET|180000
+KUNCI KONTAK|JUPITER Z|5TN|SET|75000
+KARET TROMOL|SUPRA X|GB4|SET|8500
+KARET TROMOL|SUPRA X125,|KFL|SET|8500
+KARET TROMOL|YAMAHA|23T|SET|8500
+KARET TROMOL|SMASH / SAT FU|SGP|SET|8500
+KAMPAS GANDA|BEAT POP|K44|PCS|110000
+KAMPAS GANDA|BEAT|KVY|PCS|100000
+KAMPAS GANDA|VARIO 150|K35|PCS|150000
+KAMPAS GANDA|VARIO / MIO M3|KVB / 2PH|PCS|125000
+KAMPAS GANDA|BEAT FI|KZL|PCS|105000
+KAMPAS GANDA|GENIO|K16|PCS|110000
+KAMPAS GANDA|REVO / BLADE|KWB|PCS|55000
+KAMPAS GANDA|LEGENDA / FIT NEW|HF7|PCS|55000
+KAMPAS GANDA|GRAND|GN5|PCS|55000
+KAMPAS GANDA|KHARISMA|KPH|PCS|58000
+KAMPAS GANDA|MIO J|54P|PCS|125000
+KAMPAS GANDA|MIO M3|2PH|PCS|110000
+KAMPAS GANDA|N MAX|2DP|PCS|135000
+KAMPAS GANDA|MIO SPORTY|5TL|PCS|95000
+KAMPAS GANDA|VEGA ZR|5D9|PCS|55000
+KAMPAS GANDA|JUPITER Z|5TP|PCS|55000
+KAMPAS KOPLING|GRAND / SUPRA X|166-001|SET|40000
+KAMPAS KOPLING|SUPRA X 125|KPH|SET|45000
+KAMPAS KOPLING|JUPITER|5TN|SET|40000
+KAMPAS KOPLING|JUPITER MX|50C|SET|45000
+KAMPAS KOPLING|VEGA ZR|5D9|SET|35000
+KABEL KILOMETER|VARIO|KVB|PCS|20000
+KABEL KILOMETER|MIO|5TL|PCS|20000
+KABEL REM|VARIO|KVB|PCS|25000
+KABEL REM|MIO|5TL|PCS|25000
+KABEL GAS|SUPRA X125|KPH|PCS|18000
+KABEL GAS|MIO|5TL|PCS|33000
+KAMPAS REM|SUPRA|KPH|SET|25000
+KAMPAS REM|BEAT / VARIO|KZL|SET|30000
+KAMPAS REM|MIO / VEGA ZR|5D9|SET|35000
+KARET STNSIONER|VARIO / SUPRA X125|KPH|SET|30000
+KARET STNSIONER|BEAT F1|KZL|SET|30000
+KARET STNSIONER|SATRIA FU|SGP|SET|35000
+KARET VACUM KARBURATOR|ASSY MIO|5TL|SET|25000
+KARET VACUM KARBURATOR|ASSY JUPITER MX|5OC|SET|35000
+KARET VACUM KARBURATOR|ASSY BEAT / VARIO|KVB|SET|25000
+KIPROK|SUPRA X|KEV|PCS|35000
+KIPROK|VARIO / BEAT|KVB|PCS|35000
+KIPROK|JUPITER Z / MIO|5TL|PCS|35000
+KLAKSON|MITSUBA H/Y||PCS|20000
+LAHER|6002 + BOSS||PCS|18000
+LAHER|6004||PCS|13000
+LAHER|6201||PCS|7000
+LAHER|6202||PCS|7000
+LAHER|6300||PCS|7000
+LAHER|6301||PCS|7000
+LAHER|6203||PCS|13000
+LAHER|6204||PCS|18000
+LAHER|60/22||PCS|25000
+LAHER|62/22||PCS|28000
+LAHER|6302||PCS|13000
+MASTER REM|BEAT|KVY|SET|8500
+MASTER REM|SUPRA X|KET|SET|8500
+MASTER REM|SUPRA X125 / SATRIA FU BLKG|KTM|SET|8500
+MASTER REM|VARIO 150|K59|SET|8500
+MASTER REM|MIO / JUPITER|5TP|SET|8500
+MANGKOK KAMPAS GANDA|SUPRA X|GN5|PCS|25000
+MANGKOK KAMPAS GANDA|KHARISMA|KPH|PCS|28000
+ORING HEAD|BEAT|KVY|PCS|8500
+ORING HEAD|BEAT|KZL|PCS|8500
+ORING HEAD|VARIO|KVB|PCS|8500
+ORING HEAD|VARIO|KZR|PCS|8500
+ORING HEAD|MIO M3|2PH|PCS|8500
+ORING FUEL PUMP|BEAT / VARIO||SET|6000
+ORING FUEL PUMP|VIXION||SET|6000
+PIRINGAN DISC DEPAN|BLADE|KWB|PCS|75000
+PIRINGAN DISC DEPAN|SUPRA X|KEV|PCS|75000
+PIRINGAN DISC DEPAN|SUPRA X125 / KHARISMA|KPH|PCS|75000
+PIRINGAN DISC DEPAN|MEGA PRO NEW|KSP|PCS|85000
+PIRINGAN DISC DEPAN|TIGER|KEH|PCS|85000
+PIRINGAN DISC DEPAN|BEAT / VARIO|KVB|PCS|75000
+PIRINGAN DISC DEPAN|CB150 R|K15|PCS|100000
+PIRINGAN DISC DEPAN|JUPITER Z|5TP|PCS|75000
+PIRINGAN DISC DEPAN|MIO J|54P|PCS|75000
+PIRINGAN DISC BELAKANG|CB 150 R|KCJ|PCS|95000
+PIRINGAN DISC BELAKANG|SUPRA X125|KTM|PCS|75000
+PIRINGAN DISC BELAKANG|VIXION|1PA|PCS|75000
+PULLY ASSY|BEAT|KVY|SET|295000
+PULLY ASSY|BEAT NEW|KZL|SET|310000
+PULLY ASSY|VARIO KVB|KVB|SET|315000
+PULLY ASSY|VARIO 125 TECNO|KZR|SET|340000
+PULLY ASSY|MIO|5TL|SET|265000
+PULLY ASSY|MIO M3|2PH|SET|390000
+PULLY ASSY|MIO J|54P|SET|325000
+PULLY ONLY|BEAT NEW|KZL|PCS|145000
+PULLY ONLY|BEAT|KVY|PCS|140000
+PULLY ONLY|VARIO CBS|KZR|PCS|215000
+PULLY ONLY|N MAX|2DP|PCS|240000
+PULLY ONLY|MIO|5TL|PCS|120000
+PAMPERS|BEAT|KVY|PCS|9500
+PAMPERS|BEAT NEW|KZL|PCS|9500
+PAMPERS|VARIO|KVB|PCS|9500
+PAMPERS|VARIO 125|KZR|PCS|9500
+PAMPERS|MIO M3|2PH|PCS|9500
+RUMAH ROLLER ASSY|BEAT|KVY|SET|85000
+RUMAH ROLLER ASSY|BEAT F1|KZL|SET|85000
+RUMAH ROLLER ASSY|BEAT POP|K44|SET|85000
+RUMAH ROLLER ASSY|GENIO|KOJ|SET|90000
+RUMAH ROLLER ASSY|VARIO 110|KVB|SET|85000
+RUMAH ROLLER ASSY|VARIO 125|KZR|SET|95000
+RUMAH ROLLER ASSY|MIO|5TL|SET|85000
+RUMAH ROLLER ASSY|MIO J|54P|SET|85000
+RUMAH ROLLER ASSY|N MAX|2DP|SET|130000
+RUMAH ROLLER ASSY|MIO M3|2PH|SET|95000
+RUMAH ROLLER ASSY|XEON|44D|SET|110000
+RUMAH ROLLER ONLY|BEAT|KVY|PCS|45000
+RUMAH ROLLER ONLY|BEAT F1|KZL|PCS|45000
+RUMAH ROLLER ONLY|BEAT POP|K44|PCS|45000
+RUMAH ROLLER ONLY|GENIO|KOJ|PCS|55000
+RUMAH ROLLER ONLY|VARIO 110|KVB|PCS|45000
+RUMAH ROLLER ONLY|VARIO 125|KZR|PCS|55000
+RUMAH ROLLER ONLY|MIO|5TL|PCS|55000
+RUMAH ROLLER ONLY|MIO J|54P|PCS|45000
+RUMAH ROLLER ONLY|MIO M3|2PH|PCS|55000
+RUMAH ROLLER ONLY|XEON|44D|PCS|55000
+ROLLER|BEAT|KVY|SET|22000
+ROLLER|GENIO|KOJ|SET|23000
+ROLLER|BEAT F1 / BEAT POP / VARIO 110|KVB|SET|23000
+ROLLER|VARIO 125|KWN|SET|23000
+ROLLER|MIO|5TL|SET|22000
+ROLLER|MIO J|54P|SET|22000
+ROLLER|MIO M3 / XEON|2PH|SET|23000
+ROLLER|N MAX|2DP|SET|25000
+ROTAK|BEAT F1|K25|PCS|95000
+ROTAK|GENIO|KOJ|PCS|100000
+ROTAK|PCX|K97|PCS|100000
+ROTAK|MIO J|54P|PCS|115000
+RANTAI KETENG|GRAND|GN5|SET|22000
+RANTAI KETENG|SUPRA FIT|KRS|SET|25000
+RANTAI KETENG|BLADE / REVO|KWB|SET|25000
+RANTAI KETENG|SUPRA X125|KPH|SET|25000
+RANTAI KETENG|VEGA ZR|5D9|PCS|25000
+RANTAI KETENG|VIXION|1PA|PCS|25000
+SEAL KER AS|VARIO 110 / BBEAT F1|KVB|PCS|7500
+SEAL KER AS|GENIO|KOJ|PCS|7000
+SEAL KER AS|MIO|5TL|PCS|8500
+SEAL KER AS|N MAX|2DP|PCS|7000
+SEAL KER AS|MIO M3|2PH|PCS|7000
+SEAL MAGHNET|VARIO||-|7500
+SEAL FUELL PUMP|BEAT||-|6500
+SLAIDER|BEAT|GCC|SET|8000
+SLAIDER|VARIO 125|KWN|SET|8000
+SLAIDER|MIO J|54P|SET|8000
+SLAIDER|N MAX|2DP|SET|8500
+STELAN STNSIONER|VARIO / SUPRA X125|KPH|PCS|28000
+STELAN STNSIONER|MIO M3 / N MAX|2PH|PCS|28000
+STELAN STNSIONER|MIO / MX|5TL|PCS|28000
+STELAN STNSIONER|SATRIA FU|SGP|PCS|28000
+SHOCK BREAKER BELAKANG|BEAT / VARIO|KVB|PCS|125000
+SHOCK BREAKER BELAKANG|MIO|5TL|PCS|120000
+SPULL ASSY|SUPRA X|GN5|SET|95000
+SPULL ASSY|KHARISMA|KPH|SET|105000
+SPULL ASSY|VARIO|KVB|SET|110000
+SEAL - SEAL|SEAL RODA BELAKANG|KVB|PCS|6500
+SEAL - SEAL|SEAL SHOCK SUPRA DEPAN|GN5|SET|7500
+SEAL - SEAL|SEAL SHOCK MIO DEPAN|5TL|SET|7500
+SEAL - SEAL|SEAL SHOCK SMASH DEPAN|SGP|SET|7500
+SEAL - SEAL|SEAL SHOCK GL / TIGER DEPAN|KC5|SET|8500
+SEAL - SEAL|SEAL SHOCK RX KING / N MAX|3KA|SET|8500
+SEAL - SEAL|SEAL OVERAN SUPRA X|GN5|PCS|6000
+SEAL - SEAL|SEAL PULLY MIO||SET|7500
+SEAL - SEAL|SEAL WATHER PUMP MX||SET|10000
+SEAL - SEAL|SEAL WATHER PUMP VARIO||SET|13000
+SEAL - SEAL|SEAL KLEP SUPRA|GN5|SET|6500
+SEAL - SEAL|SEAL KLEP MIO|5TL|SET|6500
+SEAL - SEAL|SEAL PULLY N MAX|2DP|SET|9000
+SEAL - SEAL|SEAL PULLY MIO|5TL|SET|9000
+SAKLAR / SWITCH / TOMBOL|SAKLAR DEAM BLADE|KWB|PCS|7000
+SAKLAR / SWITCH / TOMBOL|SAKLAR DEAM BEAT / SMASH|KVY|PCS|6000
+SAKLAR / SWITCH / TOMBOL|SAKLAR KLAKSON BLADE|KWB|PCS|7000
+SAKLAR / SWITCH / TOMBOL|SAKLAR KLAKSON BEAT|KVY|PCS|6000
+SAKLAR / SWITCH / TOMBOL|SAKLAR LAMPU BLADE|KWB|PCS|7000
+SAKLAR / SWITCH / TOMBOL|SAKLAR LAMPU BEAT / SUPRA|GN5|PCS|6000
+SAKLAR / SWITCH / TOMBOL|SAKLAR R/H MIO|5TL|SET|30000
+SAKLAR / SWITCH / TOMBOL|SAKLAR L/H MIO|5TL|SET|40000
+SAKLAR / SWITCH / TOMBOL|SAKLAR SEIN BEAT F1|KYZ|PCS|7000
+SAKLAR / SWITCH / TOMBOL|SAKLAR SEIN SUPRA X125|KPH|PCS|6500
+SAKLAR / SWITCH / TOMBOL|SAKLAR STATER SUPRA X125|KPH|PCS|5500
+SAKLAR / SWITCH / TOMBOL|SAKLAR STATER BLADE|KWB|PCS|6500
+SAKLAR / SWITCH / TOMBOL|SWITCH REM R/H SUPRA|GN5|PCS|5500
+SAKLAR / SWITCH / TOMBOL|SWITCH REM L/H BEAT SCOOPY|KVY|PCS|6000
+SAKLAR / SWITCH / TOMBOL|SWITCH REM R/H MIO 2003|5TL|PCS|7500
+SAKLAR / SWITCH / TOMBOL|SWITCH REM L/H MIO 2006|5TL|PCS|5500
+SAKLAR / SWITCH / TOMBOL|SWITCH / BENDIK STATER SUPRA|GN5|PCS|28000
+SAKLAR / SWITCH / TOMBOL|SWITCH / BENDIK STATER VARIO|KPH|PCS|28000
+TUTUP BUSI|BEAT|KVY|PCS|8500
+TUTUP BUSI|BEAT F1|KZL|PCS|8500
+TUTUP BUSI|VARIO 125|KZR|PCS|9000
+TUTUP BUSI|SUPRA X125|KPH|PCS|8000
+TUTUP BUSI|MIO|5TL|PCS|8500
+TUTUP BUSI|MIO J|54P|PCS|9500
+TUTUP BUSI|JUPITER MX|5OC|PCS|9500
+TUTUP BUSI|SATRIA FU|SGP|PCS|12500
+V. BELT ASSY|BEAT|KVY|SET|80000
+V. BELT ASSY|BEAT F1|KZL|SET|80000
+V. BELT ASSY|BEAT POP|K44|SET|80000
+V. BELT ASSY|GENIO|KOJ|SET|100000
+V. BELT ASSY|VARIO|KVB|SET|80000
+V. BELT ASSY|VARIO 125|KZR|SET|85000
+V. BELT ASSY|VARIO 150|K36|SET|110000
+V. BELT ASSY|MIO|5TL|SET|80000
+V. BELT ASSY|MIO J|54P|SET|80000
+V. BELT ASSY|MIO M3|2PH|SET|80000
+V. BELT ASSY|XEON|44D|SET|95000
+V. BELT ASSY|N MAX|2DP|SET|115000
+V. BELT ONLY|BEAT|KVY|PCS|50000
+V. BELT ONLY|BEAT F1|KZL|PCS|50000
+V. BELT ONLY|BEAT POP|K44|PCS|50000
+V. BELT ONLY|GENIO|KOJ|PCS|60000
+V. BELT ONLY|VARIO|KVB|PCS|50000
+V. BELT ONLY|VARIO 125|KZR|PCS|55000
+V. BELT ONLY|VARIO 150|K36|PCS|65000
+V. BELT ONLY|MIO|5TL|PCS|50000
+V. BELT ONLY|MIO J|54P|PCS|50000
+V. BELT ONLY|MIO M3|2PH|PCS|50000
+V. BELT ONLY|XEON|44D|PCS|65000
+V. BELT ONLY|N MAX|2DP|PCS|90000`.trim().split('\n').map((row, index) => {
+      const [category, name, code, unit, price] = row.split('|');
+      return { id: `sp-${String(index + 1).padStart(3, '0')}`, category, name, code, unit: unit || '-', price: Number(price) };
+    });
+    const savedCatalog = JSON.parse(localStorage.getItem('motorkita-catalog') || 'null');
+    const catalogData = (Array.isArray(savedCatalog) && savedCatalog.length ? savedCatalog : defaultCatalogData).map((product) => ({ ...product, unit: 'UNIT' }));
+    const productGrid = document.querySelector('#product-grid');
+    const groupShortcuts = document.querySelector('#group-shortcuts');
+    const categories = [...new Set(catalogData.map((product) => product.category))];
+    const categoryColors = Object.fromEntries(categories.map((category) => {
+      const name = category.toLowerCase();
+      const color = /kampas rem|master rem|piringan disc|dispad|shock breaker|karet tromol/.test(name) ? '#f47c53' : /coil|cdi|kiprok|klakson|dinamo stater|spull|saklar|fitting lampu|bohlam|seal fuell/.test(name) ? '#f4c95d' : /gear|rantai|roller|pully|v\. belt|slaider|stnsioner|karet stnsioner/.test(name) ? '#94c9da' : /blok|busi|carburator|filter|oring|seal|laher|kunci|komstir|kabel|kampas ganda|as shock|rumah roller|rotak|mangkok/.test(name) ? '#d8e98b' : '#b7d7c4';
+      return [category, color];
+    }));
+    const defaultStock = Object.fromEntries(catalogData.map((product) => [product.id, 1]));
+    const defaultPrices = Object.fromEntries(catalogData.map((product) => [product.id, product.price]));
+    productGrid.innerHTML = catalogData.map((product, index) => `<article class="product-card card-${['green', 'orange', 'blue'][index % 3]}" style="--category-color: ${product.color || categoryColors[product.category]}" data-category="${product.category}"><div class="card-top"><span class="product-tag">${product.category}</span><span class="card-arrow">↗</span></div><div class="pipe-icon ${['green', 'orange', 'blue'][index % 3]}-pipe"><i></i><i></i><i></i></div><h3>${product.name}</h3><p>Kode barang: ${product.code || '-'} | Kategori: ${product.category}</p><div class="card-bottom"><div><strong>Rp ${product.price.toLocaleString('id-ID')}<span>/${product.unit.toLowerCase()}</span></strong><small class="stock-status"></small></div><button class="checkout-trigger" type="button" data-product-id="${product.id}" data-product="${product.name}" data-price="${product.price}" aria-label="Checkout ${product.name}">+</button></div></article>`).join('');
+    groupShortcuts.innerHTML = [['semua', 'Semua', catalogData.length], ...categories.map((category) => [category, category, catalogData.filter((product) => product.category === category).length])].map(([id, label, count]) => `<button class="group-shortcut${id === 'semua' ? ' is-active' : ''}" type="button" data-group="${id}">${label} <span>${count}</span></button>`).join('');
+    localStorage.setItem('motorkita-catalog', JSON.stringify(catalogData));
+    let stock = { ...defaultStock, ...JSON.parse(localStorage.getItem('motorkita-stock') || '{}') };
+    localStorage.setItem('motorkita-stock', JSON.stringify(stock));
+    let prices = { ...defaultPrices, ...JSON.parse(localStorage.getItem('motorkita-prices') || '{}') };
+    let cart = [];
+    function normalizePhone(value) { const digits = String(value || '').replace(/\D/g, ''); return digits.startsWith('0') ? `62${digits.slice(1)}` : digits; }
+    function refreshContactLinks() {
+      const shop = normalizePhone(localStorage.getItem('motorkita-shop-phone') || '6281310696424');
+      const project = normalizePhone(localStorage.getItem('motorkita-project-phone') || '6281234567890');
+      document.querySelectorAll('[data-contact-link="shop"]').forEach((link) => { link.href = `https://wa.me/${shop}`; link.target = '_blank'; });
+      document.querySelectorAll('[data-contact-link="project"]').forEach((link) => { link.href = `https://wa.me/${project}`; link.target = '_blank'; });
+      const contactText = document.querySelector('[data-contact-text="shop"]');
+      if (contactText) contactText.textContent = `+${shop} ↗`;
+    }
+    refreshContactLinks();
+    pageCustomerComment.addEventListener('input', () => { customerComment.value = pageCustomerComment.value; });
+    customerComment.addEventListener('input', () => { pageCustomerComment.value = customerComment.value; });
+
+    function refreshAdminPublicComment() {
+      const comment = localStorage.getItem('motorkita-public-comment') || '';
+      adminPublicComment.textContent = comment;
+      adminPublicComment.classList.toggle('is-visible', Boolean(comment.trim()));
+    }
+    refreshAdminPublicComment();
+
+    function getTransactions() {
+      const saved = JSON.parse(localStorage.getItem('motorkita-transactions') || 'null');
+      if (Array.isArray(saved)) return saved;
+      const current = JSON.parse(localStorage.getItem('motorkita-transaction') || 'null');
+      return current ? [current] : [];
+    }
+
+    customerHistoryForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const code = customerHistoryCode.value.trim().toLowerCase();
+      const transaction = getTransactions().find((item) => String(item.id || '').toLowerCase() === code);
+      if (!transaction) { customerHistoryResult.innerHTML = '<small>Kode transaksi tidak ditemukan.</small>'; return; }
+      const total = transaction.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      const status = transaction.status === 'cancelled' ? 'Pesanan dibatalkan.' : transaction.status === 'paid' ? 'Pembayaran sudah dikonfirmasi admin.' : 'Menunggu konfirmasi pembayaran dari admin.';
+      customerHistoryResult.innerHTML = `<strong>${transaction.customerName || 'Pelanggan'} - ${status}</strong><small>Kode: ${transaction.id}</small><small>Tanggal: ${new Intl.DateTimeFormat('id-ID', { dateStyle: 'full', timeStyle: 'short' }).format(new Date(transaction.createdAt))}</small><small>${transaction.items.map((item) => `${item.name} x${item.quantity}`).join(', ')}</small><small>Total: Rp ${total.toLocaleString('id-ID')}</small><button type="button" id="customer-history-note">Lihat nota</button>`;
+      document.querySelector('#customer-history-note').addEventListener('click', () => {
+        localStorage.setItem('motorkita-cart', JSON.stringify(transaction.items));
+        localStorage.setItem('motorkita-receipt-date', transaction.createdAt);
+        localStorage.setItem('motorkita-transaction', JSON.stringify(transaction));
+        window.location.href = transaction.paymentPlan === 'lunas' ? 'nota-lunas.html' : 'nota-angsuran.html';
+      });
+    });
+
+    function renderAdminTransactions() {
+      const query = transactionSearch.value.trim().toLowerCase();
+      const transactions = getTransactions().filter((transaction) => !query || `${transaction.id} ${transaction.customerName}`.toLowerCase().includes(query));
+      transactionCount.textContent = transactions.length;
+      transactionList.innerHTML = transactions.length ? transactions.slice().reverse().map((transaction) => `<div class="admin-transaction"><strong>${transaction.status === 'cancelled' ? 'Dibatalkan' : transaction.status === 'paid' ? 'Sukses' : 'Menunggu konfirmasi'}</strong><small class="transaction-customer">Pelanggan: ${transaction.customerName || 'Tanpa nama'}</small><small>${new Intl.DateTimeFormat('id-ID', { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(transaction.createdAt))}</small><small>${transaction.items.map((item) => `${item.name} x${item.quantity}`).join(', ')}</small><small>Metode: ${transaction.paymentMethod || 'Belum dilaporkan'}</small>${transaction.status !== 'paid' && transaction.status !== 'cancelled' ? `<button type="button" data-confirm-id="${transaction.id}">Transaksi sukses</button>` : ''}</div>`).join('') : '<p class="admin-empty">Belum ada histori pembelian.</p>';
+      transactionList.querySelectorAll('[data-confirm-id]').forEach((button) => button.addEventListener('click', () => {
+        const transaction = transactions.find((entry) => entry.id === button.dataset.confirmId);
+        if (!transaction) return;
+        transaction.status = 'paid';
+        transaction.paidAt = new Date().toISOString();
+        localStorage.setItem('motorkita-transactions', JSON.stringify(transactions));
+        localStorage.setItem('motorkita-transaction', JSON.stringify(transaction));
+        renderAdminTransactions();
+      }));
+    }
+
+    function refreshStock() {
+      document.querySelectorAll('.checkout-trigger').forEach((trigger) => {
+        const amount = stock[trigger.dataset.productId];
+        const status = trigger.parentElement.querySelector('.stock-status');
+        status.textContent = amount > 1 ? `${amount} unit tersedia` : amount === 1 ? '1 unit tersedia' : 'PREORDER - stok habis';
+        status.classList.toggle('preorder-status', amount < 1);
+        trigger.disabled = false;
+      });
+    }
+
+    function renderAdminStock() {
+      stockList.innerHTML = [...document.querySelectorAll('.checkout-trigger')].map((trigger) => `<label>${trigger.dataset.product}<input type="number" min="0" data-price-id="${trigger.dataset.productId}" value="${prices[trigger.dataset.productId]}"><span>Rp</span><input type="number" min="0" data-stock-id="${trigger.dataset.productId}" value="${stock[trigger.dataset.productId]}"><span>unit</span></label>`).join('');
+    }
+
+    function refreshPrices() {
+      document.querySelectorAll('.checkout-trigger').forEach((trigger) => {
+        const priceElement = trigger.parentElement.querySelector('strong');
+        priceElement.firstChild.textContent = `Rp ${prices[trigger.dataset.productId].toLocaleString('id-ID')}`;
+      });
+    }
+
+    refreshStock();
+    refreshPrices();
+
+    document.querySelectorAll('.group-shortcut').forEach((shortcut) => {
+      shortcut.addEventListener('click', () => {
+        const selectedGroup = shortcut.dataset.group;
+        document.querySelectorAll('.group-shortcut').forEach((button) => button.classList.toggle('is-active', button === shortcut));
+        document.querySelectorAll('.product-card').forEach((card) => {
+          card.hidden = selectedGroup !== 'semua' && card.dataset.category !== selectedGroup;
+        });
+      });
+    });
+
+    productSearch.addEventListener('input', () => {
+      const query = productSearch.value.trim().toLowerCase();
+      const visibleCards = [...document.querySelectorAll('.product-card')].filter((card) => card.textContent.toLowerCase().includes(query));
+      document.querySelectorAll('.product-card').forEach((card) => { card.hidden = !visibleCards.includes(card); });
+      searchEmpty.classList.toggle('is-visible', visibleCards.length === 0);
+    });
+
+    function updateCheckout() {
+      const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+      checkoutCount.textContent = `${totalQuantity} unit`;
+      checkoutTotal.textContent = `Rp ${total.toLocaleString('id-ID')}`;
+      checkoutEmpty.hidden = cart.length > 0;
+      checkoutContinue.hidden = cart.length === 0;
+      checkoutList.innerHTML = cart.map((item) => `<div class="checkout-item"><div><strong>${item.name}${stock[item.id] < 1 ? ' <small>PREORDER</small>' : ''}</strong><small>Rp ${item.price.toLocaleString('id-ID')} / unit</small><small class="checkout-item-total">${item.quantity} x Rp ${item.price.toLocaleString('id-ID')} = Rp ${(item.price * item.quantity).toLocaleString('id-ID')}</small></div><div class="quantity-control"><button type="button" data-action="decrease" data-product-id="${item.id}" aria-label="Kurangi jumlah ${item.name}">−</button><input type="number" min="1" max="${Math.max(1, stock[item.id])}" value="${item.quantity}" data-product-id="${item.id}" aria-label="Jumlah ${item.name}"><button type="button" data-action="increase" data-product-id="${item.id}" aria-label="Tambah jumlah ${item.name}">+</button></div><button class="remove-item" type="button" data-action="remove" data-product-id="${item.id}" aria-label="Hapus ${item.name}">×</button></div>`).join('');
+    }
+
+    document.querySelectorAll('.checkout-trigger').forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const id = trigger.dataset.productId;
+        const existingItem = cart.find((item) => item.id === id);
+        if (existingItem) existingItem.quantity = Math.min(Math.max(1, stock[id]), existingItem.quantity + 1);
+        else cart.push({ id, name: trigger.dataset.product, price: prices[id], quantity: 1, preorder: stock[id] < 1 });
+        updateCheckout();
+        checkoutModal.classList.add('is-open');
+        checkoutModal.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    checkoutList.addEventListener('click', (event) => {
+      const control = event.target.closest('[data-action]');
+      if (!control) return;
+      const item = cart.find((entry) => entry.id === control.dataset.productId);
+      if (!item) return;
+      if (control.dataset.action === 'remove') cart = cart.filter((entry) => entry.id !== item.id);
+      if (control.dataset.action === 'decrease') item.quantity = Math.max(1, item.quantity - 1);
+      if (control.dataset.action === 'increase') item.quantity = Math.min(Math.max(1, stock[item.id]), item.quantity + 1);
+      updateCheckout();
+    });
+    checkoutList.addEventListener('input', (event) => {
+      if (!event.target.matches('input[data-product-id]')) return;
+      const item = cart.find((entry) => entry.id === event.target.dataset.productId);
+      if (item) item.quantity = Math.min(Math.max(1, stock[item.id]), Math.max(1, Number.parseInt(event.target.value, 10) || 1));
+      updateCheckout();
+    });
+    checkoutContinue.addEventListener('click', () => { document.querySelector('.checkout-close').click(); document.querySelector('#produk').scrollIntoView({ behavior: 'smooth' }); });
+    checkoutOrder.addEventListener('click', () => {
+      if (!cart.length) return;
+      const name = customerName.value.trim();
+      if (!name) { customerName.focus(); window.alert('Masukkan nama sebelum memesan.'); return; }
+      const createdAt = new Date().toISOString();
+      localStorage.setItem('motorkita-cart', JSON.stringify(cart));
+      localStorage.setItem('motorkita-receipt-date', createdAt);
+      const plan = paymentPlan.value;
+      const transaction = { id: `MK-${Date.now()}`, status: 'pending', customerName: name, customerComment: customerComment.value.trim(), paymentPlan: plan, items: cart.map((item) => ({ ...item, preorder: stock[item.id] < 1 })), createdAt };
+      const transactions = getTransactions();
+      transactions.push(transaction);
+      localStorage.setItem('motorkita-transactions', JSON.stringify(transactions));
+      localStorage.setItem('motorkita-transaction', JSON.stringify(transaction));
+      window.location.href = plan === 'lunas' ? 'nota-lunas.html' : 'nota-angsuran.html';
+    });
+    document.querySelector('.checkout-close').addEventListener('click', () => { checkoutModal.classList.remove('is-open'); checkoutModal.setAttribute('aria-hidden', 'true'); });
+    checkoutModal.addEventListener('click', (event) => { if (event.target === checkoutModal) document.querySelector('.checkout-close').click(); });
+    function openAdminMode() { closeAccessModal(); renderAdminStock(); renderAdminTransactions(); adminModal.classList.add('is-open'); adminModal.setAttribute('aria-hidden', 'false'); }
+    document.querySelector('#admin-toggle').addEventListener('click', () => { if (localStorage.getItem(adminSessionKey) === 'true') { openAdminMode(); return; } accessCodeInput.value = ''; accessError.classList.remove('is-visible'); accessModal.classList.add('is-open'); accessModal.setAttribute('aria-hidden', 'false'); accessCodeInput.focus(); });
+    function closeAccessModal() { accessModal.classList.remove('is-open'); accessModal.setAttribute('aria-hidden', 'true'); }
+    document.querySelector('#access-submit').addEventListener('click', () => { if (accessCodeInput.value !== adminAccessCode) { accessError.classList.add('is-visible'); accessCodeInput.focus(); return; } localStorage.setItem(adminSessionKey, 'true'); openAdminMode(); });
+    transactionSearch.addEventListener('input', renderAdminTransactions);
+    accessCodeInput.addEventListener('keydown', (event) => { if (event.key === 'Enter') document.querySelector('#access-submit').click(); });
+    document.querySelector('.access-close').addEventListener('click', closeAccessModal);
+    accessModal.addEventListener('click', (event) => { if (event.target === accessModal) closeAccessModal(); });
+    document.querySelector('.admin-close').addEventListener('click', () => { adminModal.classList.remove('is-open'); adminModal.setAttribute('aria-hidden', 'true'); });
+    document.querySelector('#admin-save').addEventListener('click', () => { stockList.querySelectorAll('[data-stock-id]').forEach((input) => { stock[input.dataset.stockId] = Math.max(0, Number.parseInt(input.value, 10) || 0); }); stockList.querySelectorAll('[data-price-id]').forEach((input) => { prices[input.dataset.priceId] = Math.max(0, Number.parseInt(input.value, 10) || 0); }); localStorage.setItem('motorkita-stock', JSON.stringify(stock)); localStorage.setItem('motorkita-prices', JSON.stringify(prices)); refreshStock(); refreshPrices(); cart.forEach((item) => { item.price = prices[item.id]; }); updateCheckout(); document.querySelector('.admin-close').click(); });
+    window.addEventListener('storage', (event) => { if (event.key === 'motorkita-transaction' || event.key === 'motorkita-transactions') renderAdminTransactions(); if (event.key === 'motorkita-public-comment') refreshAdminPublicComment(); if (event.key === 'motorkita-shop-phone' || event.key === 'motorkita-project-phone') refreshContactLinks(); });
+    adminModal.addEventListener('click', (event) => { if (event.target === adminModal) document.querySelector('.admin-close').click(); });
+  </script>
+</body>
+</html>
